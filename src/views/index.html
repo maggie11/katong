@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta content=yes name=apple-mobile-web-app-capable>
+        <meta name=format-detection content="telephone=no">
+        <meta name=viewport content="width=device-width,initial-scale=1">
+        <meta id=metaEle>
+        <title>约漫</title>
+        <link href="<%=jsVersion%>/css/app.css" rel=stylesheet>
+    </head>
+    <body>
+        <div id=app></div>
+        <script>
+        	var width = document.documentElement.clientWidth;
+			var dpr = window.devicePixelRatio
+			var scale = 1/dpr
+			var fontSize = width/37.5 * dpr + 'px'
+			document.getElementsByTagName('html')[0].style.fontSize = fontSize
+			var metaEle = document.getElementById("metaEle")   //这个是meta元素
+			metaEle.setAttribute('name', 'viewport');
+			metaEle.setAttribute('content', 'width=device-width, user-scalable=no,initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale);
+        </script>
+        <script type=text/javascript src="<%=jsVersion%>/js/manifest.js"></script>
+        <script type=text/javascript src="<%=jsVersion%>/js/vendor.js"></script>
+        <script type=text/javascript src="<%=jsVersion%>/js/app.js"></script>
+    </body>
+</html>

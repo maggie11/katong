@@ -1,7 +1,11 @@
 const { getResponse } = require('../helpers')
 
 const list = async (ctx) => {
-    const list = await models_katong.book.find({})
+    const { tag, page = 1, pageSize = 12 } = ctx.request.body
+    const list = await models_katong.book
+                    .find({tags: tag})
+                    .skip((page - 1) * pageSize)
+                    .limit(+pageSize)
 
     ctx.body = getResponse(true, {list: list})
 }

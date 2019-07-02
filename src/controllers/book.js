@@ -1,9 +1,14 @@
 const { getResponse } = require('../helpers')
 
 const list = async (ctx) => {
-    const { tag, page = 1, pageSize = 12 } = ctx.request.body
+    const { tag, page = 1, sortTime = -1, pageSize = 12 } = ctx.request.body
+    const query = {}
+    if(tag) {
+        query.tags = tag
+    }
     const list = await models_katong.book
-                    .find({tags: tag})
+                    .find(query)
+                    .sort({create_time: sortTime})
                     .skip((page - 1) * pageSize)
                     .limit(+pageSize)
 

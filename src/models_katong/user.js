@@ -5,6 +5,7 @@ const model = {
         wx: {
             headurl: String,// 头像
             nickname: String,// 昵称
+            openid: String
         },
 
         create_time: {

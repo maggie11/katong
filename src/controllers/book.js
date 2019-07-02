@@ -1,11 +1,12 @@
 const { getResponse } = require('../helpers')
 
 const list = async (ctx) => {
-    const { tag, page = 1, sortTime = -1, pageSize = 12 } = ctx.request.body
+    const { tag, page = 1, name = '', sortTime = -1, pageSize = 12 } = ctx.request.body
     const query = {}
     if(tag) {
         query.tags = tag
     }
+    query.name = {$regex: name}
     const list = await models_katong.book
                     .find(query)
                     .sort({create_time: sortTime})

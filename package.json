@@ -17,7 +17,7 @@
     "koa-session-mongo2": "^1.1.1",
     "koa-static": "^5.0.0",
     "koa-views": "^6.1.4",
-    "mongoose": "^5.2.2",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.18.0",
     "superagent": "^3.8.3",
     "urllib": "^2.29.0"

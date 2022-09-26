@@ -20,6 +20,6 @@
     "mongoose": "^5.2.2",
     "nodemon": "^1.18.0",
     "superagent": "^3.8.3",
-    "urllib": "^2.29.0"
+    "urllib": "^2.38.1"
   }
 }
